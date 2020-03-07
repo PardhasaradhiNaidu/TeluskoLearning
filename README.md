@@ -1,1 +1,1 @@
-# TeluskoLearning
+# PardhaSaradhi Naidu Personal PRO
