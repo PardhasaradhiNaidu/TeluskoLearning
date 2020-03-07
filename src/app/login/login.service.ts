@@ -7,14 +7,14 @@ import { model } from '../Model/model';
 @Injectable()
 export class LoginService  {
 
-  subject = new BehaviorSubject([]);
+  subject = new BehaviorSubject('');
   public messages$ = this.subject.asObservable()
-  array=[]
+  
+ 
   constructor(private api: ApiService) { 
-this.method()
+
    
 
-    let a=this.subject.next(this.array);
   }
   public currentUser = { name: 'pardha' };
   private loginUrl = '/employee/login';
@@ -29,10 +29,9 @@ this.method()
   }
 
 
-  method(){
-  this.array=[{ name: 'pardha' }, { name: 'aamam' }, { name: 'manu' },]
-
-  }
+ subjectMethod$(value){
+   this.subject.next(value);
+ }
   
   ngOnInit() {
 

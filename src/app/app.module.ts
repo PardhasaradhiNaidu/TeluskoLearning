@@ -43,7 +43,8 @@ import { DefaultComponent } from './home/default/default.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    
   ],
   providers: [CommonService,LoginService,ApiService,HomeComponent],
   bootstrap: [AppComponent]

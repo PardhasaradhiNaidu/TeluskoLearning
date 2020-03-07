@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { LoginService } from '../login/login.service';
 import { Router, NavigationStart } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -11,10 +12,10 @@ import { BehaviorSubject } from 'rxjs';
 export class HomeComponent implements OnInit {
 
 
-constructor(private router:Router,private service:LoginService){}
+constructor(private router:Router,private service:LoginService,private http:HttpClient){}
 data
 ngOnInit(){
-  console.log('wS',this.service.array)
+
  this.data=this.service.messages$.subscribe(data=>{this.data=data
   console.log(data)
 });
@@ -25,6 +26,7 @@ ngOnInit(){
 
   closeNav() {
     document.getElementById("mySidenav").style.width = "0";
+    this.service.subjectMethod$('sideNavPardha')
 
   }
 
